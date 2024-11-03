@@ -3,7 +3,9 @@
  export default function NavigationBar() {
     return <>
       <div className='mainPage'>
+
         <div className='mainPage-container'>
+
           <nav className='mainPage-nav'>
   
             <div className='navBar-left'>
@@ -36,7 +38,22 @@
               </ul>
             </div>
           </nav>
+        
         </div>
+      
+        <div className='header-body-container'>
+          <div className="header-body-left">
+            <h1>More than just shorter links</h1>
+            <h2>Build your brands </h2>
+            <button>Get Started</button>
+          </div>
+
+
+          <div className="header-body-right"></div>
+        </div>
+
+
+
       </div>
     </>
   }

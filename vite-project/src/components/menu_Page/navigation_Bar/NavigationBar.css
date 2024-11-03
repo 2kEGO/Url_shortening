@@ -1,12 +1,13 @@
 .mainPage {
-    width: 100%;
-    min-height: 100vh;
+    width: 90%;
     background-color: var(--mainPageColor);
+    min-height: 10vh;
+    margin: 0 auto;
 }
 
 .mainPage-container {
-    width: 90%;
-    margin: 2rem auto;
+    width: 100%;
+    margin: 0;
 }
 
 .mainPage-nav {
