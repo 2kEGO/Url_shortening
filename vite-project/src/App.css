@@ -15,8 +15,143 @@ a{
     --mainPageColor: white;
     --fontInter: "Inter";
     --fontPoppins: "Poppins";
+
+    /* NAVIGATION BAR */
     --logoColor: #333039;
     --navFontColor: #a1a0a9;
     --navFontColorHover: #3c3b40;
-    --signInBackgroundColor: #9be2e2;
+    --signInBackgroundColor: #2bd0cf;
+    --signInBackgroundColorHover: hsl(180, 66%, 60%);
+
+    --bodyHeaderColor: #34313b;
+    --bodyh2Color:  #c0c0c4;
+
+    /* SIDE PAGE */
+    --backgroundColorPage2: #f0f1f6;
+    --searchInputBackgroundColor: #3a3053;
 }
+
+/* HEADER BODY CONTAINER */
+
+.header-body-container {
+    width: 100%;
+    margin-top: 4rem;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header-body-left {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header-body-left h1 {
+    font-size: 5.5rem;
+    font-weight: 800;
+    font-family: var(--fontPoppins);
+    color: var(--bodyHeaderColor);
+}
+
+.header-body-left h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--fontInter);
+    color: var(--bodyh2Color);
+    line-height: 1.5;
+
+    padding-right: 10rem;
+    margin-bottom: 2rem;
+}
+
+.header-body-left button {
+    background-color: var(--signInBackgroundColor);
+
+    padding: 10px 2.5rem;
+    border: 0;
+    border-radius: 70px;
+
+    font-family: var(--fontPoppins);
+    font-size: 15pt;
+    font-weight: 800;
+    color: white;
+}
+
+.header-body-left button:hover {
+    background-color: var(--signInBackgroundColorHover);
+}
+
+
+.header-body-right {
+    width: 50%;
+
+    transform: translateX(20rem);
+}
+
+
+/* URL INPUT CONTAINER */
+
+.sidePage {
+    width: 100%;
+
+    background-color: var(--backgroundColorPage2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.url-container {
+    width: 80%;
+    height: 13vh;
+
+    border: 0;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-image: url('assets/images/bg-shorten-desktop.svg');
+    background-color: var(--searchInputBackgroundColor);
+}
+
+.url-display {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-container {
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+   
+}
+
+.display-container input {
+    width:90%;
+    height: 5vh;
+
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.display-container h4 {
+    display: none;
+}
+
