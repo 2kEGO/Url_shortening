@@ -29,6 +29,8 @@ a{
     /* SIDE PAGE */
     --backgroundColorPage2: #f0f1f6;
     --searchInputBackgroundColor: #3a3053;
+    --statH2color: #b5b5bd;
+    --boxCirclesColor: #3a3053;
 }
 
 /* HEADER BODY CONTAINER */
@@ -95,11 +97,15 @@ a{
 
 
 /* URL INPUT CONTAINER */
+.sidePage-container {
+    background-color: var(--backgroundColorPage2);
+}
+
 
 .sidePage {
-    width: 100%;
+    width: 70%;
 
-    background-color: var(--backgroundColorPage2);
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
@@ -108,11 +114,11 @@ a{
 }
 
 .url-container {
-    width: 80%;
-    height: 13vh;
+    width: 100%;
+    height: 16vh;
 
     border: 0;
-    border-radius: 5px;
+    border-radius: 20px;
 
     display: flex;
     align-items: center;
@@ -120,6 +126,8 @@ a{
     
     background-image: url('assets/images/bg-shorten-desktop.svg');
     background-color: var(--searchInputBackgroundColor);
+
+    transform: translateY(-5rem);
 }
 
 .url-display {
@@ -129,23 +137,25 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    gap: 20px;
 }
 
 .display-container {
-    width: 80%;
+    width: 70%;
     height: 100%;
 
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 
    
 }
 
 .display-container input {
-    width:90%;
-    height: 5vh;
+    width: 95%;
+    height: 50%;
 
     border-radius: 10px;
     padding-left: 20px;
@@ -155,3 +165,72 @@ a{
     display: none;
 }
 
+.url-display button {
+  height: 50%;
+  width: 12rem;
+
+  background-color: var(--signInBackgroundColorHover);
+  border: 0;
+  border-radius: 10px;
+
+  font-size: 15pt;
+  color: white;
+  font-weight: 600;
+  
+}
+
+
+/* STAT CONTAINER SECTION */
+
+.stat-container {
+    width: 50%;
+
+    margin: 4vh;
+
+    text-align: center;
+}
+
+.stat-container h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--fontPoppins);
+    color: var(--logoColor);
+}
+
+.stat-container h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--fontInter);
+    color: var(--statH2color);
+    line-height: 1.5;
+}
+
+
+/* THREE BOXES SECTION */
+
+.three-box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    min-height: 100vh;
+    gap: 20px;
+    margin-top: 5rem;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+    max-height: 20vh;
+
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+.circle {
+    background-color: ;
+}
