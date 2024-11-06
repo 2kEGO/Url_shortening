@@ -179,6 +179,37 @@ a{
   
 }
 
+/* URL API SHORTEN SECTION  */
+
+.url-shorten-container {
+    width: 100%;
+    min-height: 8vh;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.left-container, .right-container {
+    padding: 0 2rem;
+    height: inherit;
+}
+
+.right-container {
+    display: flex;
+    gap: 2rem;
+    
+}
+
+.right-container button {
+    height: 80%;
+
+}
+
 
 /* STAT CONTAINER SECTION */
 

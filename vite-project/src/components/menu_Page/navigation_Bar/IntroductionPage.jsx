@@ -11,7 +11,7 @@
  
  export default function IntroductionPage() {
 
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("www");
 
 
     return <>
@@ -87,6 +87,18 @@
             </div>
 
           </div>
+
+          <div className="url-shorten-container">
+            <div className='left-container'>
+              <a href="">{display}</a>
+            </div>
+            <div className='right-container'>
+              <a href="">www</a>
+              <button>Copy</button>
+            </div>
+          </div>
+
+
 
           <div className="stat-container">
             <h1>Advance Statistics</h1>
