@@ -9,32 +9,50 @@
 
  import { useState } from 'react';
  
+
  export default function IntroductionPage() {
+
+  function handleButtonClick(event) {
+    
+  }
 
   const [longUrl, setLongUrl] = useState("");
   const [newLink, setNewLink] = useState("");
+  const [shortenedLinks, setShortenedLinks] = useState([]);
+
+
+
 
   function handleInputChange(event){
     setLongUrl(event.target.value);
-    console.log(event.target.value);
   }
 
-  async function handleSubmit(event){
+  async function handleSubmit(event) {
     event.preventDefault();
-    await fetch("https://api-ssl.bitly.com/v4/shorten", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_BITLY_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        long_url: longURL,
-        domain: "bit.ly",
-        group_guid: `${process.env.REACT_APP_GUID}`,
-      }),
-    })
-      .then((respond) => console.log(respond))
+
+    if (!longUrl) return; // Prevent submission if input is empty
+
+    try {
+      const response = await fetch("https://api-ssl.bitly.com/v4/shorten", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_BITLY_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          long_url: longUrl,
+          domain: "bit.ly",
+          group_guid: `${import.meta.env.VITE_GUID}`,
+        }),
+      });
+
+      const data = await response.json();
+      setShortenedLinks([...shortenedLinks, { longUrl, shortUrl: data.link }]);
+      setLongUrl(""); // Clear input field after successful submission
+    } catch (error) {
+      console.error("Error shortening the link:", error);
+    }
   }
 
 
@@ -111,6 +129,7 @@
               
               <button method =''
                       type='submit'
+                      
                       >Shorten It!</button>
 
             </form>
@@ -118,13 +137,19 @@
           </div>
 
           <div className="url-shorten-container">
-            <div className='left-container'>
-              <a href="">{longUrl}</a>
-            </div>
-            <div className='right-container'>
-              <a href="">www</a>
-              <button>Copy</button>
-            </div>
+            <ul>
+              {shortenedLinks.map((link, index) => (
+                  <li key={index}>
+                    <div className='left-container'>
+                      <a href={link.longUrl}>{link.longUrl}</a>
+                    </div>
+                    <div className='right-container'>
+                      <a href={link.shortUrl}>{link.shortUrl}</a>
+                      <button onClick={() => navigator.clipboard.writeText(link.shortUrl)}>Copy</button>
+                    </div>
+                  </li>
+                ))}
+            </ul>
           </div>
 
 
