@@ -183,13 +183,14 @@ a{
 
 .url-shorten-container {
     width: 100%;
-    min-height: 8vh;
+    height: 8vh;
+
+    border-radius: 5px;
 
     background-color: white;
 
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
 
 }
@@ -197,17 +198,36 @@ a{
 .left-container, .right-container {
     padding: 0 2rem;
     height: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font: var(--fontPoppins);
+    font-size: 15pt;
+    font-weight: 700;
 }
 
 .right-container {
     display: flex;
     gap: 2rem;
-    
+}
+
+.right-container a {
+    color: var(--signInBackgroundColor);
 }
 
 .right-container button {
-    height: 80%;
+    height: 50%;
+    width: 6rem;
 
+    border: 0;
+    border-radius: 5px;
+
+    font: var(--fontPoppins);
+    color: white;
+    background-color: var(--signInBackgroundColor);
+    font-size: 15pt;
 }
 
 

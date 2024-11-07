@@ -11,7 +11,31 @@
  
  export default function IntroductionPage() {
 
-  const [display, setDisplay] = useState("www");
+  const [longUrl, setLongUrl] = useState("");
+  const [newLink, setNewLink] = useState("");
+
+  function handleInputChange(event){
+    setLongUrl(event.target.value);
+    console.log(event.target.value);
+  }
+
+  async function handleSubmit(event){
+    event.preventDefault();
+    await fetch("https://api-ssl.bitly.com/v4/shorten", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_BITLY_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        long_url: longURL,
+        domain: "bit.ly",
+        group_guid: `${process.env.REACT_APP_GUID}`,
+      }),
+    })
+      .then((respond) => console.log(respond))
+  }
 
 
     return <>
@@ -76,21 +100,26 @@
           
           <div className="url-container">
             
-            <div className="url-display">
+            <form action="" className="url-display" method='post' onSubmit={handleSubmit}>
               <div className="display-container">
-                <input type="text" placeholder='Shorten a link here...' />
+                <input type="text"
+                       placeholder='Shorten a link here...'
+                       value={longUrl}
+                       onChange={handleInputChange} />
                 <h4>Please add a link</h4>
               </div>
               
-              <button>Shorten It!</button>
+              <button method =''
+                      type='submit'
+                      >Shorten It!</button>
 
-            </div>
+            </form>
 
           </div>
 
           <div className="url-shorten-container">
             <div className='left-container'>
-              <a href="">{display}</a>
+              <a href="">{longUrl}</a>
             </div>
             <div className='right-container'>
               <a href="">www</a>
