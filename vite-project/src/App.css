@@ -99,6 +99,9 @@ a{
 /* URL INPUT CONTAINER */
 .sidePage-container {
     background-color: var(--backgroundColorPage2);
+
+    display: flex;
+    height: auto;
 }
 
 
@@ -111,7 +114,16 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    gap: 4rem;
 }
+
+.handleUrl {
+    width: 100%;
+    height: 100%;
+}
+
+
 
 .url-container {
     width: 100%;
@@ -127,7 +139,7 @@ a{
     background-image: url('assets/images/bg-shorten-desktop.svg');
     background-color: var(--searchInputBackgroundColor);
 
-    transform: translateY(-5rem);
+    /* transform: translateY(-5rem); */
 }
 
 .url-display {
@@ -150,8 +162,14 @@ a{
     justify-content: space-evenly;
     flex-direction: column;
 
-   
 }
+
+.url-shorten-container{
+    width: 100%;
+    height: auto; /* Allow dynamic height */
+    border-radius: 5px;
+}
+
 
 .display-container input {
     width: 95%;
@@ -181,19 +199,40 @@ a{
 
 /* URL API SHORTEN SECTION  */
 
+.handleUrl {
+    height: clamp(50vh 100vh);
+}
+
 .url-shorten-container {
     width: 100%;
     height: 8vh;
 
     border-radius: 5px;
 
-    background-color: white;
+    
 
+}
+
+.url-shorten-container ul {
+    height: 100%;
+    list-style: none;
+
+    
+}
+
+.url-shorten-container ul li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
 
+    height: 100%;
+
+    background-color: white;
+
+    margin-bottom: 3rem;
 }
+
 
 .left-container, .right-container {
     padding: 0 2rem;
@@ -205,7 +244,7 @@ a{
 
     font: var(--fontPoppins);
     font-size: 15pt;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .right-container {

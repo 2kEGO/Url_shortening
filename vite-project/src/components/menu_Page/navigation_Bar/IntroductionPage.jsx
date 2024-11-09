@@ -116,77 +116,81 @@
       <div className="sidePage-container">
         <div className="sidePage">
           
-          <div className="url-container">
+          <div className='handleUrl'>
             
-            <form action="" className="url-display" method='post' onSubmit={handleSubmit}>
-              <div className="display-container">
-                <input type="text"
-                       placeholder='Shorten a link here...'
-                       value={longUrl}
-                       onChange={handleInputChange} />
-                <h4>Please add a link</h4>
-              </div>
+            <div className="url-container">
               
-              <button method =''
-                      type='submit'
-                      
-                      >Shorten It!</button>
+              <form action="" className="url-display" method='post' onSubmit={handleSubmit}>
+                <div className="display-container">
+                  <input type="text"
+                        placeholder='Shorten a link here...'
+                        value={longUrl}
+                        onChange={handleInputChange} />
+                  <h4>Please add a link</h4>
+                </div>
+                
+                <button method =''
+                        type='submit'
+                        
+                        >Shorten It!</button>
 
-            </form>
+              </form>
 
-          </div>
-
-          <div className="url-shorten-container">
-            <ul>
-              {shortenedLinks.map((link, index) => (
-                  <li key={index}>
-                    <div className='left-container'>
-                      <a href={link.longUrl}>{link.longUrl}</a>
-                    </div>
-                    <div className='right-container'>
-                      <a href={link.shortUrl}>{link.shortUrl}</a>
-                      <button onClick={() => navigator.clipboard.writeText(link.shortUrl)}>Copy</button>
-                    </div>
-                  </li>
-                ))}
-            </ul>
-          </div>
-
-
-
-          <div className="stat-container">
-            <h1>Advance Statistics</h1>
-            <h2>Track how your links are performing across the web with our advanced statistics dashboard</h2>
-          </div>
-
-          <div className="three-box-container">
-            <div className="box-container">
-
-              <div className='circle'>
-                <img src={brandImg} alt="" />
-              </div>
-              <h2>Brand Recognition</h2>
-              <h3>Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.</h3>
             </div>
 
-            <div className="box-container">
-              <div className='circle'>
-                  <img src={detailedImg} alt="" />
-                </div>
-                <h2>Detailed Records</h2>
-                <h3>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</h3>
-              </div>
-
-            <div className="box-container">
-              <div className='circle'>
-                  <img src={fullImg} alt="" />
-                </div>
-                <h2>Fully Customizable</h2>
-                <h3>Impove brand awareness and content discoverability through customizable links, upercharing audienece engagement.</h3>
-              </div>
+            <div className="url-shorten-container">
+              <ul>
+                {shortenedLinks.map((link, index) => (
+                    <li key={index}>
+                      <div className='left-container'>
+                        <a href={link.longUrl}>{link.longUrl}</a>
+                      </div>
+                      <div className='right-container'>
+                        <a href={link.shortUrl}>{link.shortUrl}</a>
+                        <button onClick={() => navigator.clipboard.writeText(link.shortUrl)}>Copy</button>
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+            </div>
           </div>
 
+        
         </div>
+
+        {/* <div className='stat'>
+            <div className="stat-container">
+            <h1>Advance Statistics</h1>
+            <h2>Track how your links are performing across the web with our advanced statistics dashboard</h2>
+            </div>
+
+            <div className="three-box-container">
+              <div className="box-container">
+
+                <div className='circle'>
+                  <img src={brandImg} alt="" />
+                </div>
+                <h2>Brand Recognition</h2>
+                <h3>Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.</h3>
+              </div>
+
+              <div className="box-container">
+                <div className='circle'>
+                    <img src={detailedImg} alt="" />
+                  </div>
+                  <h2>Detailed Records</h2>
+                  <h3>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</h3>
+                </div>
+
+              <div className="box-container">
+                <div className='circle'>
+                    <img src={fullImg} alt="" />
+                  </div>
+                  <h2>Fully Customizable</h2>
+                  <h3>Impove brand awareness and content discoverability through customizable links, upercharing audienece engagement.</h3>
+                </div>
+            </div>
+        </div> */}
       </div>
     </>
   }
